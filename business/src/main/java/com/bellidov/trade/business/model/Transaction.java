@@ -7,18 +7,22 @@ import java.util.Date;
  * Created by xrup on 11/27/17.
  */
 public class Transaction {
-    private String tcn;
+    
+    //common
     private String customer;
     private String ccyPair;
     private String type;
     private String direction;
-    private String tradeDate;
+    private Date tradeDate;
     private BigDecimal amount1;
     private BigDecimal amount2;
     private Double rate;
     private String legalENtity;
     private String trader;
-    private Date valueDate; // only for spot/forward
+
+    // only for spot/forward
+    private Date valueDate;
+    private String tcn;
 
     //for option
     private String style;
@@ -72,11 +76,11 @@ public class Transaction {
         this.direction = direction;
     }
 
-    public String getTradeDate() {
+    public Date getTradeDate() {
         return tradeDate;
     }
 
-    public void setTradeDate(String tradeDate) {
+    public void setTradeDate(Date tradeDate) {
         this.tradeDate = tradeDate;
     }
 

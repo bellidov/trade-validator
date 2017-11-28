@@ -5,6 +5,8 @@ import com.bellidov.trade.business.model.response.GetValidatorResponse;
 import com.bellidov.trade.business.service.ValidatorService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,7 @@ public class ValidatorController {
 
     @RequestMapping(value = "/validator", method = RequestMethod.POST)
     public ResponseEntity<GetValidatorResponse> getValidationResults(@RequestBody final Transaction ... transactions){
-        return null;
+        GetValidatorResponse response = service.getValidatorResponse(transactions);
+        return new ResponseEntity<GetValidatorResponse>(response, HttpStatus.OK);
     }
 }
