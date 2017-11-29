@@ -3,12 +3,13 @@ package com.bellidov.trade.business.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Transaction {
-    
+public class Transaction implements Serializable{
+
     //common
     private String customer;
     private String ccyPair;
