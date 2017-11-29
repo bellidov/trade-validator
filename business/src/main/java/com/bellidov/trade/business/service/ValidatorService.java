@@ -161,6 +161,11 @@ public class ValidatorService {
             errors.add(PREMIUM_DATE_ERROR);
         }
 
+        //tcn
+        if(transaction.getTcn() == null) {
+            errors.add("The TCN parameter is missing");
+        }
+
         return errors;
     }
 
