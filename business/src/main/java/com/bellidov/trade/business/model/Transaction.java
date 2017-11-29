@@ -1,11 +1,12 @@
 package com.bellidov.trade.business.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * Created by xrup on 11/27/17.
- */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
     
     //common
@@ -13,27 +14,33 @@ public class Transaction {
     private String ccyPair;
     private String type;
     private String direction;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date tradeDate;
     private BigDecimal amount1;
     private BigDecimal amount2;
     private Double rate;
-    private String legalENtity;
+    private String legalEntity;
     private String trader;
 
     // only for spot/forward
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date valueDate;
     private String tcn;
 
     //for option
     private String style;
     private String strategy;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date deliveryDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date expiryDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date excerciseStartDate;
     private String payCcy;
     private Double premium;
     private String premiumCcy;
     private String premiumType;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date premiumDate;
 
     public String getTcn() {
@@ -108,12 +115,12 @@ public class Transaction {
         this.rate = rate;
     }
 
-    public String getLegalENtity() {
-        return legalENtity;
+    public String getLegalEntity() {
+        return legalEntity;
     }
 
-    public void setLegalENtity(String legalENtity) {
-        this.legalENtity = legalENtity;
+    public void setLegalEntity(String legalEntity) {
+        this.legalEntity = legalEntity;
     }
 
     public String getTrader() {
