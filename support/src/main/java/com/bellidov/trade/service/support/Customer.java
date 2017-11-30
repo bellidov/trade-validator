@@ -1,4 +1,4 @@
-package com.bellidov.trade.support;
+package com.bellidov.trade.service.support;
 
 public enum Customer {
     PLUTO1,

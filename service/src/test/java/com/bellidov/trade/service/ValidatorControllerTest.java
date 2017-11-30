@@ -1,11 +1,10 @@
-package com.bellidov.trade;
+package com.bellidov.trade.service;
 
-import com.bellidov.trade.business.model.GetValidatorResponse;
-import com.bellidov.trade.business.model.Transaction;
-import com.bellidov.trade.business.service.ValidatorService;
-import com.bellidov.trade.rest.ValidatorController;
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
+import com.bellidov.trade.service.business.model.GetValidatorResponse;
+import com.bellidov.trade.service.business.model.Transaction;
+import com.bellidov.trade.service.business.service.ValidatorService;
+import com.bellidov.trade.service.configuration.Configurations;
+import com.bellidov.trade.service.rest.ValidatorController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,10 +13,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.io.IOException;
@@ -26,13 +25,13 @@ import java.io.Serializable;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
+@ContextConfiguration(classes = Configurations.class)
 public class ValidatorControllerTest {
 
     @InjectMocks

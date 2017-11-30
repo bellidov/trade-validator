@@ -1,4 +1,4 @@
-package com.bellidov.trade.business.model;
+package com.bellidov.trade.service.business.model;
 
 import java.util.ArrayList;
 import java.util.List;

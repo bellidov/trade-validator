@@ -1,8 +1,8 @@
-package com.bellidov.trade.rest;
+package com.bellidov.trade.service.rest;
 
-import com.bellidov.trade.business.model.Transaction;
-import com.bellidov.trade.business.model.GetValidatorResponse;
-import com.bellidov.trade.business.service.ValidatorService;
+import com.bellidov.trade.service.business.model.Transaction;
+import com.bellidov.trade.service.business.model.GetValidatorResponse;
+import com.bellidov.trade.service.business.service.ValidatorService;
 import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +26,7 @@ public class ValidatorController {
     private ValidatorService service;
 
     @RequestMapping(value = "/validator", method = RequestMethod.POST)
-    public ResponseEntity<GetValidatorResponse> getValidationResults(@RequestBody final Transaction ... transactions){
+    public ResponseEntity<GetValidatorResponse> getValidationResults(@RequestBody final Transaction... transactions){
         LOGGER.debug("POST /validator request has been received.");
         ResponseEntity<GetValidatorResponse> response;
 

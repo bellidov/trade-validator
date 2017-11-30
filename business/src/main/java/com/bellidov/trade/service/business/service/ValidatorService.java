@@ -1,10 +1,10 @@
-package com.bellidov.trade.business.service;
+package com.bellidov.trade.service.business.service;
 
-import com.bellidov.trade.business.model.Transaction;
-import com.bellidov.trade.business.model.GetValidatorResponse;
-import com.bellidov.trade.support.Customer;
-import com.bellidov.trade.support.ProductType;
-import com.bellidov.trade.support.Style;
+import com.bellidov.trade.service.business.model.Transaction;
+import com.bellidov.trade.service.business.model.GetValidatorResponse;
+import com.bellidov.trade.service.support.Style;
+import com.bellidov.trade.service.support.Customer;
+import com.bellidov.trade.service.support.ProductType;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.slf4j.Logger;

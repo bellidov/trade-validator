@@ -1,4 +1,4 @@
-package com.bellidov.trade;
+package com.bellidov.trade.service;
 
 import org.junit.Test;
 
