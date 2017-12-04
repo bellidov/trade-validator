@@ -59,10 +59,26 @@ function post(){
         error : function(e) {
             $("#fail").show();
             $("#success").hide();
-        				console.log("ERROR: ", e);
+            console.log("ERROR: ", e);
+            if(e.responseJSON.report && e.responseJSON.report.length > 0) {
+                populateErrors(e.responseJSON.report);
+            }
         },
         done : function(e) {
         				console.log("DONE");
         }
     });
+}
+
+function populateErrors(report) {
+
+    var e = $('.card');
+    for (var i = report.length - 1; i >= 0; i--) {
+      e.clone().insertAfter(e);
+      
+      e.find("li").get(0).innerText = report[i].errors.join("; ");
+      e.find("li").get(1).innerText = JSON.stringify(report[i].transaction, null, '\t');
+      e.show();
+    }
+
 }

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <script src="<c:url value="/resources/js/main.js" />"></script>
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet"></link>
+    <!--script src="js/main.js"></script>
+    <link href="css/main.css" rel="stylesheet"></link-->
 </head>
 <body>
     
@@ -45,6 +47,15 @@
                         <h2 class="text-center" style="color:green;">The validation was successful.</h2>
                     </div>
                 </div>
+                
+                <div class="card" style="width: 100%; display:none;">
+                        <br />
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">head</li>
+                          <li class="list-group-item">body</li>
+                        </ul>
+                </div>
+
             </div>
         </div class="row">
     </div>
